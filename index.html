@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet"> 
+</head>
+    <header>
+        <div id="intro" class="intro">
+            <div id="logo" class="intro-logo"><img class="intro-logo-img" src="libralogo.png"></div>
+            <div id="counter" class="header-counter">
+                    <div class="header-counter-read">BOOKS READ:</div>
+                    <div class="header-counter-undread"> BOOKS UNREAD:</div>
+                    <div class="header-counter-total">TOTAL: </div>
+            </div>
+            <div id="deleteAll" class="delete-all-items">delete all</div>
+        </div>
+    </header>
+<body>
+    <section class="book-table-adder">
+        <div id="adder" class="book-adder"> 
+            <form class="book-adder-form">
+                <label for="title">Title:</label> <br>
+                <input type="text" id="title" name="title" placeholder="title.."><br>
+                <label for="author">Author:</label> <br>
+                <input type="text" id="author" name="author" placeholder="author.."><br>
+                <label for="pages"> Number of pages:</label> <br>
+                <input type="number" min="1" max="99999" id="pages" value="pages" name="pages" placeholder="number of pages"><br>
+                <input type="checkbox" id="readStatus"> Have you finished it? </input>
+                <p>Summary/ Key takeaways</p>
+                <textarea id="summary" name="summary" value="summary" placeholder="summary"></textarea> <br>
+                <input type="submit" id="submit" value="Add book" placeholder="Add book">
+            </form>
+        </div>
+        <div class="book-table">
+            <table class="book-table-list">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Status</th>
+                    <th>Summary</th>
+                    <th id="remove">Remove</th>
+                </tr>
+            </table>
+        </div>
+
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+:root{
+    --clr-accent: #16e0bd;
+    --clr-dark: #303030;
+    --clr-extra:  #8a2c2c;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h1: 1.25rem;
+    --fs-body: 1rem;
+}
+
+body{
+    height: 100vh;
+}
+
+
+.header-counter{
+    background: var(--clr-dark);
+    width:75%;
+    display:flex;
+    color: var(--clr-accent);
+}
+
+.header-counter-read,
+.header-counter-unread,
+.header-counter-total{
+    padding-left:4rem;
+    padding-right:4rem;
+}
+
+.intro{
+    display:flex;
+    height: 5rem;
+}
+
+.intro-logo{
+    width:15%;
+    background: var(--clr-accent);
+}
+
+.intro-logo-img{
+    height:5rem;
+    width:5rem;
+}
+
+.delete-all-items{
+    background: var(--clr-extra);
+    width: 10%;
+}
+
+.book-table-adder{
+    display:flex;
+    height: 90%;
+}
+.book-adder{
+    width:15%;
+    background: var(--clr-extra);
+}
+
+.book-table{
+    width:85%;
+}
+th{
+    padding-left:4rem;
+    padding-right:4rem;
+}
+#remove{
+    background: #8a2c2c;
+}
+td{
+    padding-left:4rem;
+    padding-right:4rem;
+}
+input,
+label{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
