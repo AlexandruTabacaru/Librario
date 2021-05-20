@@ -91,6 +91,7 @@ function display(book){
 
 }
 
+//why
 console.log(Book.prototype);
    
 //storing part
