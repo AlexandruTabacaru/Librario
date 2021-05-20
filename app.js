@@ -13,9 +13,9 @@ function Book(title, author, pages, readStatus, summary){
     this.readStatus=readStatus;
     this.summary=summary;
     myLibrary.push(this);
-    this.index=libraryIndex;
-    libraryIndex++; 
+    this.index=libraryIndex; 
     createBook(this);     
+    libraryIndex++;
 }
 
 console.log(libraryIndex);
@@ -27,7 +27,8 @@ form.addEventListener('submit', function(e){
    // console.log(myLibrary);
     totalBooks.innerText=`TOTAL: ${myLibrary.length}`;
     display(book);
-    e.preventDefault();
+    //WE DISABLE PREVENT DEFAULT IN ORDER SO THAT THE PAGE GETS RELOADED, SUCH THAT THE BOOKS GAIN AN INDEX IN THE ARRAY IN CASE THEY ARE REMOVED
+    //e.preventDefault();
     form.reset();
 })
 
@@ -68,12 +69,15 @@ function display(book){
     deleteBtn.addEventListener('click', function(e){
         table.removeChild(e.target.parentElement);
         console.log(this);
-        myLibrary.splice(this.dataset.index, 1);
+        if(myLibrary.length==1){myLibrary=[];}
+        console.log(myLibrary.indexOf(book))
+        if(myLibrary.indexOf(book)!=-1) myLibrary.splice(myLibrary.indexOf(book),1)
         console.log(myLibrary);
         localStorage.setItem('mylibrary', JSON.stringify(myLibrary));
         totalBooks.innerText=`TOTAL: ${myLibrary.length}`;
     })
 
+    // change a book's status
     readBtn.addEventListener('click', function(){
         //console.log(readBtn.innerText);
         console.log(book.readStatus);
@@ -81,6 +85,7 @@ function display(book){
         book.readStatus="not read";}
         else if (readBtn.innerText==="not read") {readBtn.innerText="read";
         book.readStatus="read";}
+        localStorage.setItem('mylibrary', JSON.stringify(myLibrary));
     })
     
 
@@ -88,7 +93,7 @@ function display(book){
 
 console.log(Book.prototype);
    
-
+//storing part
 function getBooks(){
     if(localStorage.getItem('mylibrary') === null){
         myLibrary=[];
