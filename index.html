@@ -25,12 +25,12 @@
         <div id="adder" class="book-adder"> 
             <form class="book-adder-form">
                 <label for="title">Title:</label> <br>
-                <input type="text" id="title" name="title" placeholder="title.."><br>
+                <input type="text" id="title" name="title" placeholder="title.." required><br>
                 <label for="author">Author:</label> <br>
-                <input type="text" id="author" name="author" placeholder="author.."><br>
+                <input type="text" id="author" name="author" placeholder="author.." required><br>
                 <label for="pages"> Number of pages:</label> <br>
-                <input type="number" min="1" max="99999" id="pages" value="pages" name="pages" placeholder="number of pages"><br>
-                <input type="checkbox" id="readStatus"> Have you finished it? </input>
+                <input type="number" min="1" max="99999" id="pages" value="pages" name="pages" required placeholder="number of pages"><br>
+                <input type="checkbox" id="readStatus" > Have you finished it? </input>
                 <p>Summary/ Key takeaways</p>
                 <textarea id="summary" name="summary" value="summary" placeholder="summary"></textarea> <br>
                 <input type="submit" id="submit" value="Add book" placeholder="Add book">
