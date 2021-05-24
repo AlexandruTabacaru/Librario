@@ -5,6 +5,11 @@ var form=document.querySelector('.book-adder-form');
 const addBook=document.querySelector('#submit')
 const isItRead=document.querySelector('#readStatus');
 const clearAll=document.getElementById('totalRemover');
+const totalUnreadBooks=document.querySelector('.header-counter-unread');
+const totalReadBooks=document.querySelector('.header-counter-read');
+
+totalUnreadBooks.innerText=`BOOKS UNREAD: 0`;
+totalReadBooks.innerText=`BOOKS READ: 0`;
 var libraryIndex=0;
 
 function Book(title, author, pages, readStatus, summary){
@@ -105,7 +110,7 @@ clearAll.addEventListener('click', function(){
      </tr>`;
     myLibrary=[];
     localStorage.setItem('totalBooks',JSON.stringify(myLibrary.length));
-    totalBooks.innerText=`TOTAL: ${JSON.parse(localStorage.getItem('totalBooks'))}`
+    totalBooks.innerText=`TOTAL: 0`;
     localStorage.setItem('mylibrary', JSON.stringify(myLibrary))
     
 })
