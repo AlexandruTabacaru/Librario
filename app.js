@@ -105,7 +105,9 @@ clearAll.addEventListener('click', function(){
      </tr>`;
     myLibrary=[];
     localStorage.setItem('totalBooks',JSON.stringify(myLibrary.length));
+    totalBooks.innerText=`TOTAL: ${JSON.parse(localStorage.getItem('totalBooks'))}`
     localStorage.setItem('mylibrary', JSON.stringify(myLibrary))
+    
 })
 
 //why
