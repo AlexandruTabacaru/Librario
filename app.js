@@ -4,6 +4,7 @@ const totalBooks=document.querySelector('.header-counter-total');
 var form=document.querySelector('.book-adder-form');
 const addBook=document.querySelector('#submit')
 const isItRead=document.querySelector('#readStatus');
+const clearAll=document.getElementById('totalRemover');
 var libraryIndex=0;
 
 function Book(title, author, pages, readStatus, summary){
@@ -73,6 +74,7 @@ function display(book){
         console.log(myLibrary.indexOf(book))
         if(myLibrary.indexOf(book)!=-1) myLibrary.splice(myLibrary.indexOf(book),1)
         console.log(myLibrary);
+        localStorage.setItem('totalBooks',JSON.stringify(myLibrary.length));
         localStorage.setItem('mylibrary', JSON.stringify(myLibrary));
         totalBooks.innerText=`TOTAL: ${myLibrary.length}`;
     })
@@ -91,6 +93,21 @@ function display(book){
 
 }
 
+clearAll.addEventListener('click', function(){
+    table.innerHTML=`
+    <tr>
+            <th>Title</th>
+            <th>Author</th> 
+            <th>Pages</th>
+            <th>Status</th>
+            <th>Summary</th>
+            <th id="remove">Remove</th>
+     </tr>`;
+    myLibrary=[];
+    localStorage.setItem('totalBooks',JSON.stringify(myLibrary.length));
+    localStorage.setItem('mylibrary', JSON.stringify(myLibrary))
+})
+
 //why
 console.log(Book.prototype);
    
@@ -101,6 +118,7 @@ function getBooks(){
     }else{
         myLibrary= JSON.parse(localStorage.getItem('mylibrary'));
     }
+    totalBooks.innerText=`TOTAL: ${JSON.parse(localStorage.getItem('totalBooks'))}`
     return myLibrary;
 }
 
@@ -109,6 +127,7 @@ function createBook(book) {
     const myLibrary=getBooks();
     myLibrary.push(book);
     localStorage.setItem('mylibrary', JSON.stringify(myLibrary))
+    localStorage.setItem('totalBooks',JSON.stringify(myLibrary.length));
 }
 
 window.addEventListener('DOMContentLoaded', function(){

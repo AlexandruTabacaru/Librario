@@ -19,6 +19,16 @@ html{
     --fs-body: 1rem;
 }
 
+#deleteAll{
+    position: relative;
+   text-align: center;
+}
+#totalRemover{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
 body{
     height: 100vh;
 }
